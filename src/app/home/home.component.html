@@ -1,0 +1,119 @@
+<nav class="navbar navbar-dark bg-dark" *ngFor="let home of homeList">
+  <span class="navbar-brand mb-0 h1">{{ home.nav_logo }}</span>
+  <a routerLink="/">Home</a> 
+  <a routerLink="/admin">admin</a> 
+</nav>
+<!-- slider -->
+<app-slider></app-slider>
+
+
+
+<!-- projets -->
+
+<hr>
+
+
+<section id="portfolio">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-lg-4 col-sm-6" *ngFor="let projet of projetList">
+        <a class="portfolio-box " href="{{projet.projet_link}}">
+          <img class="img-fluid" src="{{projet.projet_img}}" alt="">
+          <div class="portfolio-box-caption">
+            <div class="project-category text-white-50">
+                {{projet.projet_title}}
+            </div>
+            <div class="project-name">
+                {{projet.projet_description}}
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<br />
+
+
+<!-- presentation -->
+<header class="masthead" *ngFor="let home of homeList">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-lead-in">{{ home.pres_title }}</div>
+      <div class="intro-heading text-uppercase">{{home.pres_description}} </div>
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+    </div>
+  </div>
+</header>
+<br />
+
+<!-- competences -->
+
+
+<div class="container">
+  <h1 class="h2">Mes competences</h1>
+  <div class="row centered mt mb">
+    <div class=" col-lg-3 col-md-3 col-sm-3 col-4 gallery" *ngFor="let competence of compList">
+      <a href="#">
+        <img class="img-responsive" style="width:100%" src="{{ competence.comp_img }}" />
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- formulaire de contact -->
+<div class="container">
+  <h2 class="h2">Me contacter</h2>
+  <form class="mt mb">
+    <div class="form-group">
+      <label for="name">Nom</label>
+      <input type="text" id="name" name="name" placeholder="Votre nom.." class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Votre email</label>
+      <input type="email" name="email" placeholder="Votre email.." class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Message</label>
+      <textarea id="subject" name="subject" class="form-control"></textarea>
+    </div>
+
+    <input type="submit" value="Envoyer" class="btn btn-primary">
+  </form>
+</div>
+
+
+<!-- footer -->
+<footer class="font-small bg-info">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 py-3 ">
+        <div class="text-center">
+          <!-- icon facbook -->
+          <a href="#">
+            <i class="fab fa-facebook-f fa-lg  mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+          <!-- icon github -->
+          <a href="#">
+            <i class="fab fa-github fa-lg  mr-md-5 mr-3 fa-2x"></i>
+          </a>
+          <!-- icon instagram -->
+          <a href="#">
+            <i class="fab fa-instagram fa-lg mr-md-5 mr-3 fa-2x"> </i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class=" text-center py-3 bg-info">© 2018 Copyright:
+    <a href="#">Themis.com</a>
+  </div>
+
+
+</footer>

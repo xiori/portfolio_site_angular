@@ -1,0 +1,37 @@
+<a routerLink="/new-projet">Créer un nouveau projet</a> 
+<h1>Projets</h1>
+<table border='1' width='100%' style='border-collapse: collapse;'>
+  <tr>
+    <th>Id</th>
+    <th>Projet Image</th>
+    <th>Projet Title</th>
+    <th>Projet Description</th>
+    <th>Projet Link</th>
+  </tr>
+  <tr *ngFor='let projet of projets'>
+    <td>{{projet.id}}</td>
+    <td>{{projet.projet_img}}</td>
+    <td>{{projet.projet_title}}</td>
+    <td>{{projet.projet_description}}</td>
+    <td>{{projet.projet_link}}</td>
+    <td>
+      <button (click)="deleteProjet(projet.id)">Supprimer</button>
+      <button (click)="selectProjet(projet)">Update</button>
+    </td>
+  </tr>
+
+</table>
+
+<br>
+<form #f="ngForm">
+  <label>Projet Image</label>
+  <input type="text" name="projet_img" [(ngModel)]="selectedProjet.projet_img">
+  <label>Projet Title</label>
+  <input type="text" name="projet_title" [(ngModel)]="selectedProjet.projet_title">
+  <label>Projet Description</label>
+  <input type="text" name="projet_description" [(ngModel)]="selectedProjet.projet_description">
+  <label>Projet LInk</label>
+  <input type="text" name="projet_link" [(ngModel)]="selectedProjet.projet_link">
+  <br>
+  <input type="button" (click)="createOrUpdateProjet(f)" value="CRéer ou mettre à jour">
+</form>
